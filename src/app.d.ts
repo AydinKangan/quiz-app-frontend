@@ -41,3 +41,9 @@ declare class LeaderboardUser {
 	correctAnswers: number;
 	attempts: number;
 }
+
+declare class PastResult {
+	correctAnswers: number;
+	totalAnswers: nuumber;
+	createdAt: string;
+}

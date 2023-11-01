@@ -23,7 +23,6 @@
 	const getLeaderboard = async () => {
 		const res = await axios.get(`${PUBLIC_BACKEND_URL}/get-leaderboard`);
 		leaderboard = await res.data;
-		console.log(leaderboard)
 	};
 
 	onMount(getLeaderboard);

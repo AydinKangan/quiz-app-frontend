@@ -43,7 +43,6 @@
 			});
 			results = await res.data;
 
-			console.log(results);
 		} catch (error) {
 			console.error(error);
 		}
