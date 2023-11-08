@@ -1,6 +1,6 @@
 <script lang="ts">
 	import axios from 'axios';
-	import {PUBLIC_BACKEND_URL} from "$env/static/public"
+	import { PUBLIC_BACKEND_URL } from '$env/static/public';
 	import AnswerLabel from '$lib/answer-label.svelte';
 	import QuestionLabel from '$lib/question-label.svelte';
 	import { onMount } from 'svelte';
@@ -14,7 +14,7 @@
 	let answersForChecking: AnswerForChecking[] = [];
 	let showResults: boolean = false;
 	let results: Result[] = [];
-	let userDetails: UserDetails | null = $user
+	let userDetails: UserDetails | null = $user;
 
 	$: isLoggedIn = $user === null || Object.keys($user).length === 0 ? false : true;
 
@@ -47,7 +47,6 @@
 				}
 			});
 			results = await res.data;
-
 		} catch (error) {
 			console.error(error);
 		}
@@ -78,7 +77,9 @@
 
 <div class="flex flex-col justify-center items-center h-[100vh]">
 	{#if isLoggedIn}
-	<button on:click={logout} class="btn variant-filled justify-end">Logout</button>
+		<div class="w-[90%] flex flex-row justify-end mt-4">
+			<button on:click={logout} class="btn variant-filled">Logout</button>
+		</div>
 		{#if showResults === false}
 			{#if questions.length > 0}
 				<h1 class="h1">Question {questionNumber} of {questions.length}</h1>
