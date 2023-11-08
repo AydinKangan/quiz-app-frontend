@@ -75,11 +75,11 @@
 	};
 </script>
 
-<div class="flex flex-col justify-center items-center h-[100vh]">
+<div class="flex flex-col justify-center items-center h-[100vh] relative">
 	{#if isLoggedIn}
-		<div class="w-[90%] flex flex-row justify-end mt-4">
-			<button on:click={logout} class="btn variant-filled">Logout</button>
-		</div>
+		<button on:click={logout} class="btn variant-filled absolute right-[2rem] top-[2rem]"
+			>Logout</button
+		>
 		{#if showResults === false}
 			{#if questions.length > 0}
 				<h1 class="h1">Question {questionNumber} of {questions.length}</h1>
