@@ -17,9 +17,9 @@
 	};
 </script>
 
-<label class="flex items-center space-x-2">
-	<button on:click={handleClick}>
-		<Icon icon="material-symbols:select" />
+<label class="btn variant-filled flex items-center space-x-2">
+	<button on:click={handleClick} >
+		<!--<Icon icon="material-symbols:select" />-->
 	</button>
 	<p class="hover:cursor-pointer">{answer.answer}</p>
 </label>
