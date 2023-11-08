@@ -18,6 +18,11 @@
 
 	$: isLoggedIn = $user === null || Object.keys($user).length === 0 ? false : true;
 
+	const logout = () => {
+		user.update((val) => (val = null));
+		goto('/');
+	};
+
 	onMount(() => {
 		if (!isLoggedIn) {
 			goto('/');
@@ -73,6 +78,7 @@
 
 <div class="flex flex-col justify-center items-center h-[100vh]">
 	{#if isLoggedIn}
+	<button on:click={logout} class="btn variant-filled justify-end">Logout</button>
 		{#if showResults === false}
 			{#if questions.length > 0}
 				<h1 class="h1">Question {questionNumber} of {questions.length}</h1>
